@@ -1,0 +1,867 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/mySchema",
+    "definitions": {
+        "mySchema": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "anyOf": [
+                        {
+                            "anyOf": [
+                                {
+                                    "not": {}
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "published": {
+                    "type": "string",
+                    "enum": [
+                        "draft",
+                        "review",
+                        "published"
+                    ],
+                    "default": "draft"
+                },
+                "name": {
+                    "anyOf": [
+                        {
+                            "anyOf": [
+                                {
+                                    "not": {}
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "en": {
+                                            "anyOf": [
+                                                {
+                                                    "anyOf": [
+                                                        {
+                                                            "not": {}
+                                                        },
+                                                        {
+                                                            "type": "string"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "null"
+                                                }
+                                            ]
+                                        },
+                                        "de": {
+                                            "$ref": "#/definitions/mySchema/properties/name/anyOf/0/anyOf/1/properties/en"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            ]
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "slug": {
+                    "anyOf": [
+                        {
+                            "anyOf": [
+                                {
+                                    "not": {}
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "en": {
+                                            "anyOf": [
+                                                {
+                                                    "anyOf": [
+                                                        {
+                                                            "not": {}
+                                                        },
+                                                        {
+                                                            "type": "string"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "null"
+                                                }
+                                            ]
+                                        },
+                                        "de": {
+                                            "$ref": "#/definitions/mySchema/properties/slug/anyOf/0/anyOf/1/properties/en"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            ]
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "description": {
+                    "anyOf": [
+                        {
+                            "anyOf": [
+                                {
+                                    "not": {}
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "en": {
+                                            "anyOf": [
+                                                {
+                                                    "anyOf": [
+                                                        {
+                                                            "not": {}
+                                                        },
+                                                        {
+                                                            "anyOf": [
+                                                                {
+                                                                    "type": [
+                                                                        "string",
+                                                                        "number",
+                                                                        "boolean"
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "$ref": "#/definitions/mySchema/properties/description/anyOf/0/anyOf/1/properties/en/anyOf/0/anyOf/1"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "additionalProperties": {
+                                                                        "$ref": "#/definitions/mySchema/properties/description/anyOf/0/anyOf/1/properties/en/anyOf/0/anyOf/1"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "null"
+                                                }
+                                            ]
+                                        },
+                                        "de": {
+                                            "$ref": "#/definitions/mySchema/properties/description/anyOf/0/anyOf/1/properties/en"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            ]
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "media": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "$ref": "#/definitions/mySchema/properties/id"
+                            },
+                            "published": {
+                                "$ref": "#/definitions/mySchema/properties/published",
+                                "default": "published"
+                            },
+                            "mediaType": {
+                                "type": "string",
+                                "enum": [
+                                    "image",
+                                    "video",
+                                    "audio",
+                                    "document",
+                                    "other"
+                                ],
+                                "default": "image"
+                            },
+                            "name": {
+                                "anyOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "not": {}
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "en": {
+                                                        "anyOf": [
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "not": {}
+                                                                    },
+                                                                    {
+                                                                        "type": "string"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "null"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "de": {
+                                                        "$ref": "#/definitions/mySchema/properties/media/items/properties/name/anyOf/0/anyOf/1/properties/en"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "caption": {
+                                "anyOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "not": {}
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "en": {
+                                                        "anyOf": [
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "not": {}
+                                                                    },
+                                                                    {
+                                                                        "type": "string"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "null"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "de": {
+                                                        "$ref": "#/definitions/mySchema/properties/media/items/properties/caption/anyOf/0/anyOf/1/properties/en"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "alt": {
+                                "anyOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "not": {}
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "en": {
+                                                        "anyOf": [
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "not": {}
+                                                                    },
+                                                                    {
+                                                                        "type": "string"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "null"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "de": {
+                                                        "$ref": "#/definitions/mySchema/properties/media/items/properties/alt/anyOf/0/anyOf/1/properties/en"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "path": {
+                                "anyOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "not": {}
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "en": {
+                                                        "anyOf": [
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "not": {}
+                                                                    },
+                                                                    {
+                                                                        "type": "string"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "null"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "de": {
+                                                        "$ref": "#/definitions/mySchema/properties/media/items/properties/path/anyOf/0/anyOf/1/properties/en"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "width": {
+                                "anyOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "not": {}
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "en": {
+                                                        "anyOf": [
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "not": {}
+                                                                    },
+                                                                    {
+                                                                        "type": "number"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "null"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "de": {
+                                                        "$ref": "#/definitions/mySchema/properties/media/items/properties/width/anyOf/0/anyOf/1/properties/en"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "height": {
+                                "anyOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "not": {}
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "en": {
+                                                        "anyOf": [
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "not": {}
+                                                                    },
+                                                                    {
+                                                                        "type": "number"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "null"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "de": {
+                                                        "$ref": "#/definitions/mySchema/properties/media/items/properties/height/anyOf/0/anyOf/1/properties/en"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "default": []
+                },
+                "parentIds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/mySchema/properties/id"
+                    },
+                    "default": []
+                },
+                "components": {
+                    "anyOf": [
+                        {
+                            "anyOf": [
+                                {
+                                    "not": {}
+                                },
+                                {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "const": "pricing"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "attributeCategories": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "$ref": "#/definitions/mySchema/properties/id"
+                            },
+                            "name": {
+                                "anyOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "not": {}
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "en": {
+                                                        "anyOf": [
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "not": {}
+                                                                    },
+                                                                    {
+                                                                        "type": "string"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "null"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "de": {
+                                                        "$ref": "#/definitions/mySchema/properties/attributeCategories/items/properties/name/anyOf/0/anyOf/1/properties/en"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "description": {
+                                "anyOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "not": {}
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "en": {
+                                                        "anyOf": [
+                                                            {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "not": {}
+                                                                    },
+                                                                    {
+                                                                        "anyOf": [
+                                                                            {
+                                                                                "anyOf": [
+                                                                                    {
+                                                                                        "not": {}
+                                                                                    },
+                                                                                    {
+                                                                                        "$ref": "#/definitions/mySchema/properties/description/anyOf/0/anyOf/1/properties/en/anyOf/0/anyOf/1"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "type": "null"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "type": "null"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "de": {
+                                                        "$ref": "#/definitions/mySchema/properties/attributeCategories/items/properties/description/anyOf/0/anyOf/1/properties/en"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "null"
+                                    }
+                                ]
+                            },
+                            "attributes": {
+                                "type": "array",
+                                "items": {
+                                    "allOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "$ref": "#/definitions/mySchema/properties/id"
+                                                },
+                                                "name": {
+                                                    "anyOf": [
+                                                        {
+                                                            "anyOf": [
+                                                                {
+                                                                    "not": {}
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "en": {
+                                                                            "anyOf": [
+                                                                                {
+                                                                                    "anyOf": [
+                                                                                        {
+                                                                                            "not": {}
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "string"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "type": "null"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        "de": {
+                                                                            "$ref": "#/definitions/mySchema/properties/attributeCategories/items/properties/attributes/items/allOf/0/properties/name/anyOf/0/anyOf/1/properties/en"
+                                                                        }
+                                                                    },
+                                                                    "additionalProperties": false
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "null"
+                                                        }
+                                                    ]
+                                                },
+                                                "description": {
+                                                    "anyOf": [
+                                                        {
+                                                            "anyOf": [
+                                                                {
+                                                                    "not": {}
+                                                                },
+                                                                {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "en": {
+                                                                            "anyOf": [
+                                                                                {
+                                                                                    "anyOf": [
+                                                                                        {
+                                                                                            "not": {}
+                                                                                        },
+                                                                                        {
+                                                                                            "$ref": "#/definitions/mySchema/properties/description/anyOf/0/anyOf/1/properties/en/anyOf/0/anyOf/1"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "type": "null"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        "de": {
+                                                                            "$ref": "#/definitions/mySchema/properties/attributeCategories/items/properties/attributes/items/allOf/0/properties/description/anyOf/0/anyOf/1/properties/en"
+                                                                        }
+                                                                    },
+                                                                    "additionalProperties": false
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "null"
+                                                        }
+                                                    ]
+                                                },
+                                                "componentField": {
+                                                    "anyOf": [
+                                                        {
+                                                            "anyOf": [
+                                                                {
+                                                                    "not": {}
+                                                                },
+                                                                {
+                                                                    "type": "string"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "null"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "anyOf": [
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string",
+                                                            "const": "string"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "type"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string",
+                                                            "const": "boolean"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "type"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string",
+                                                            "const": "int"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "type"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string",
+                                                            "const": "float"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "type"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string",
+                                                            "const": "decimal"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "type"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string",
+                                                            "const": "select"
+                                                        },
+                                                        "attributeSelect": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "id": {
+                                                                    "$ref": "#/definitions/mySchema/properties/id"
+                                                                },
+                                                                "attributeSelectOptions": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "id": {
+                                                                                "$ref": "#/definitions/mySchema/properties/id"
+                                                                            },
+                                                                            "value": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "name": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "en": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "de": {
+                                                                                        "$ref": "#/definitions/mySchema/properties/attributeCategories/items/properties/attributes/items/allOf/1/anyOf/5/properties/attributeSelect/properties/attributeSelectOptions/items/properties/name/properties/en"
+                                                                                    }
+                                                                                },
+                                                                                "required": [
+                                                                                    "en",
+                                                                                    "de"
+                                                                                ],
+                                                                                "additionalProperties": false
+                                                                            },
+                                                                            "description": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "en": {
+                                                                                        "anyOf": [
+                                                                                            {
+                                                                                                "anyOf": [
+                                                                                                    {
+                                                                                                        "not": {}
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "$ref": "#/definitions/mySchema/properties/description/anyOf/0/anyOf/1/properties/en/anyOf/0/anyOf/1"
+                                                                                                    }
+                                                                                                ]
+                                                                                            },
+                                                                                            {
+                                                                                                "type": "null"
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    "de": {
+                                                                                        "$ref": "#/definitions/mySchema/properties/attributeCategories/items/properties/attributes/items/allOf/1/anyOf/5/properties/attributeSelect/properties/attributeSelectOptions/items/properties/description/properties/en"
+                                                                                    }
+                                                                                },
+                                                                                "additionalProperties": false
+                                                                            }
+                                                                        },
+                                                                        "required": [
+                                                                            "value",
+                                                                            "name",
+                                                                            "description"
+                                                                        ],
+                                                                        "additionalProperties": false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "required": [
+                                                                "attributeSelectOptions"
+                                                            ],
+                                                            "additionalProperties": false
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "type",
+                                                        "attributeSelect"
+                                                    ],
+                                                    "additionalProperties": false
+                                                },
+                                                {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "type": {
+                                                            "type": "string",
+                                                            "const": "json"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "type"
+                                                    ],
+                                                    "additionalProperties": false
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "attributes"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "default": []
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}
